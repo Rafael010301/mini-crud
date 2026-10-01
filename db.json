@@ -1,0 +1,53 @@
+{
+  "jogos": [
+    {
+      "titulo": "Roblox",
+      "genero": "Sandbox",
+      "plataforma": "PC",
+      "nota": 9,
+      "status": "Jogando",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "titulo": "Stardew Valley",
+      "genero": "Simulação",
+      "plataforma": "CONSOLE",
+      "nota": 10,
+      "status": "Jogando"
+    },
+    {
+      "id": "3",
+      "titulo": "Terraria",
+      "genero": "Ação/Aventura",
+      "plataforma": "PC",
+      "nota": 9.5,
+      "status": "Finalizado"
+    },
+    {
+      "id": "5",
+      "titulo": "Hollow Knight",
+      "genero": "Metroidvania",
+      "plataforma": "PC",
+      "nota": 10,
+      "status": "Finalizado"
+    },
+    {
+      "id": "6",
+      "titulo": "Standoff 2",
+      "genero": "FPS",
+      "plataforma": "Mobile",
+      "nota": 7.5,
+      "status": "Abandonado"
+    },
+    {
+      "titulo": "Minecraft",
+      "genero": "Sandbox",
+      "plataforma": "PC",
+      "nota": 9,
+      "status": "Finalizado",
+      "id": "Oyyz47jZsNU"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameTrack API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="tituloPrincipal">GameTrack API</h1>
+    </header>
+
+    <main>
+        <section class="carroselCards">
+            <div class="cardsInformativos1" id="dashTotal">Total: 0</div>
+            <div class="cardsInformativos2" id="dashJogando">Jogando: 0</div>
+            <div class="cardsInformativos3" id="dashFinalizados">Finalizados: 0</div>
+        </section>
+
+        <section class="controles">
+            <input type="text" id="inputPesquisa" placeholder="Pesquisar por título...">
+            
+            <select id="selectFiltroStatus">
+                <option value="Todos">Todos os Status</option>
+                <option value="Quero jogar">Quero jogar</option>
+                <option value="Jogando">Jogando</option>
+                <option value="Finalizado">Finalizado</option>
+                <option value="Abandonado">Abandonado</option>
+            </select>
+        </section>
+
+        <section class="areaFormulario">
+            <form id="formJogo">
+                <input type="hidden" id="jogoId">
+                <input type="text" id="inputTitulo" placeholder="Título do jogo" required>
+                <input type="text" id="inputGenero" placeholder="Gênero" required>
+                <input type="text" id="inputPlataforma" placeholder="Plataforma" required>
+                <input type="number" id="inputNota" placeholder="Nota (0 a 10)" min="0" max="10" step="0.1" required>
+                
+                <select id="selectStatusForm" required>
+                    <option value="" disabled selected>Selecione o Status</option>
+                    <option value="Quero jogar">Quero jogar</option>
+                    <option value="Jogando">Jogando</option>
+                    <option value="Finalizado">Finalizado</option>
+                    <option value="Abandonado">Abandonado</option>
+                </select>
+
+                <button type="submit" id="btnSalvar">Salvar Jogo</button>
+            </form>
+        </section>
+
+        <section class="cardCentral" id="containerJogos">
+            
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

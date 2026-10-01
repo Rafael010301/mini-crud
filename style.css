@@ -1,0 +1,313 @@
+
+
+:root {
+    color-scheme: dark;
+
+    --bg: #111214;
+    --surface: #18191c;
+    --surface-2: #1f2024;
+    --border: #2a2c31;
+    --border-strong: #3a3d44;
+
+    --text: #e8e8ea;
+    --text-muted: #9a9ca3;
+
+    --accent: #e0a84a;
+    --accent-ink: #1a1305;
+    --danger: #e5776f;
+
+    --radius: 6px;
+    --radius-lg: 8px;
+    --focus: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100dvh;
+    padding: 3rem 1.5rem 4rem;
+}
+
+header,
+main {
+    width: 100%;
+    max-width: 960px;
+    margin-inline: auto;
+}
+
+
+header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border);
+}
+
+#tituloPrincipal {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+
+
+.carroselCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.cardsInformativos1,
+.cardsInformativos2,
+.cardsInformativos3 {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+
+
+.controles {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.controles input {
+    flex: 2 1 260px;
+}
+
+.controles select {
+    flex: 1 1 180px;
+}
+
+
+
+input,
+select {
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.6rem 0.8rem;
+    min-height: 2.6rem;
+    transition: border-color 0.15s ease;
+}
+
+input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.8;
+}
+
+input:hover,
+select:hover {
+    border-color: var(--border-strong);
+}
+
+input:focus-visible,
+select:focus-visible {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: var(--focus);
+}
+
+select {
+    cursor: pointer;
+}
+
+
+
+.areaFormulario {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+}
+
+#formJogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+}
+
+#formJogo input,
+#formJogo select {
+    background: var(--bg);
+}
+
+#btnSalvar {
+    grid-column: 1 / -1;
+    justify-self: start;
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: var(--accent);
+    color: var(--accent-ink);
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    padding: 0.6rem 1.25rem;
+    min-height: 2.6rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+}
+
+#btnSalvar:hover {
+    filter: brightness(1.08);
+}
+
+#btnSalvar:focus-visible {
+    outline: none;
+    box-shadow: var(--focus);
+}
+
+
+.cardCentral {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.cardCentral:empty::before {
+    content: "Nenhum jogo encontrado.";
+    grid-column: 1 / -1;
+    padding: 2.5rem 0;
+    text-align: center;
+    color: var(--text-muted);
+    border: 1px dashed var(--border-strong);
+    border-radius: var(--radius-lg);
+}
+
+.cardJogo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.5rem;
+    align-content: start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    transition: border-color 0.15s ease;
+}
+
+.cardJogo:hover {
+    border-color: var(--border-strong);
+}
+
+.cardJogo h3,
+.cardJogo p {
+    grid-column: 1 / -1;
+}
+
+.cardJogo h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+    overflow-wrap: anywhere;
+}
+
+.cardJogo p {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.45rem 0;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+    color: var(--text);
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.cardJogo p strong {
+    flex-shrink: 0;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-align: left;
+}
+
+
+
+.cardJogo button {
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    padding: 0.5rem 0.9rem;
+    min-height: 2.25rem;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.cardJogo button:nth-of-type(1):hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.cardJogo button:nth-of-type(2) {
+    color: var(--text-muted);
+}
+
+.cardJogo button:nth-of-type(2):hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+.cardJogo button:focus-visible {
+    outline: none;
+    box-shadow: var(--focus);
+}
+
+
+
+@media (max-width: 640px) {
+    body {
+        padding: 1.5rem 1rem 3rem;
+    }
+
+    .carroselCards {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .areaFormulario {
+        padding: 1rem;
+    }
+
+    #btnSalvar {
+        justify-self: stretch;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
