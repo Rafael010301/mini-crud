@@ -68,3 +68,43 @@ Endpoint Principal: `http://localhost:3000/jogos`
   "nota": 9.8,
   "status": "Finalizado"
 }
+```
+- **Resposta Esperada**: Código `201 Created` com o objeto JSON do jogo criado, incluindo o `id` gerado automaticamente.
+
+---
+
+### 5. Atualizar Jogo Existente (PUT)
+- **Objetivo**: Substituir integralmente os dados de um jogo já existente no banco de dados.
+- **Método**: `PUT`
+- **URL**: `http://localhost:3000/jogos/{id}` (Exemplo: `http://localhost:3000/jogos/1`)
+- **Cabeçalhos (Headers)**:
+  - `Content-Type`: `application/json`
+- **Corpo (Body - JSON)**:
+```json
+{
+  "titulo": "The Witcher 3: Wild Hunt - Complete Edition",
+  "genero": "RPG",
+  "plataforma": "PC / PS5",
+  "nota": 10.0,
+  "status": "Finalizado"
+}
+```
+- **Resposta Esperada**: Código `200 OK` com o objeto atualizado, ou `404 Not Found` se o recurso não for encontrado.
+
+---
+
+### 6. Remover Jogo (DELETE)
+- **Objetivo**: Excluir permanentemente um registo do banco de dados.
+- **Método**: `DELETE`
+- **URL**: `http://localhost:3000/jogos/{id}` (Exemplo: `http://localhost:3000/jogos/1`)
+- **Cabeçalhos (Headers)**: Nenhum necessário.
+- **Corpo (Body)**: Nenhum.
+- **Resposta Esperada**: Código `200 OK` (ou `204 No Content`) confirmando a remoção do registo.
+
+---
+
+### 7. Códigos de Status HTTP Principais
+- `200 OK`: Requisição executada com sucesso (GET, PUT, DELETE).
+- `201 Created`: Novo recurso criado com sucesso (POST).
+- `400 Bad Request`: Erro de sintaxe na requisição ou JSON malformado.
+- `404 Not Found`: Endpoint ou ID do recurso não encontrado no servidor.
